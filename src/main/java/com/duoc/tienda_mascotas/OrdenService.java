@@ -16,6 +16,8 @@ public class OrdenService {
 
     public OrdenService() {
         ordenes.add(new Orden(1L, 1L, "Sebastian Corvalan", "+56944786517", 1, 3000, "CONFIRMADA"));
+        ordenes.add(new Orden(2L, 2L, "Juan Venegas", "+56944553453", 2, 20580, "ANULADA"));
+        ordenes.add(new Orden(3L, 4L, "Cristian Pavez", "+56955437889", 1, 9580, "ENVIADA"));
     }
 
     public List<Orden> getAll() {
@@ -56,6 +58,14 @@ public class OrdenService {
 
 
         return "Nueva orden de compra creada: N° " + newOrden.getNum_orden();
+    }
+
+    public String checkEstado(Long num_orden) {
+        Orden o = searchById(num_orden);
+        if (o == null) {
+            return "El numero de orden de compra no existe";
+        }
+        return "El numero de orden: " + o.getNum_orden() + ", se encuentra en estado: " + o.getEstado();
     }
 
     public String changeState(Long num_orden, String estado) {

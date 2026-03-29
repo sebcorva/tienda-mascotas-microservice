@@ -23,6 +23,12 @@ public class OrdenController {
         return ordenService.searchById(num_orden);
     }
 
+    // http://localhost:8080/orden/revisar?num_orden=3
+    @GetMapping("/revisar")
+    public String check(@RequestParam Long num_orden) {
+        return ordenService.checkEstado(num_orden);
+    }
+
     // http://localhost:8080/orden/crear?id_pro=4&nombre_cliente=Nataly Peña&celular=+56935789686&cantidad=2
     @GetMapping("/crear")
     public String add(
