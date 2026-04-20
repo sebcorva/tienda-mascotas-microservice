@@ -1,4 +1,4 @@
-package com.duoc.tienda_mascotas;
+package com.duoc.tienda_mascotas.dto;
 
 public record OrdenDtoCreate (
     Long id_pro,

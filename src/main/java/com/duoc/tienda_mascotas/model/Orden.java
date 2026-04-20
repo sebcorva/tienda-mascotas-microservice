@@ -1,4 +1,4 @@
-package com.duoc.tienda_mascotas;
+package com.duoc.tienda_mascotas.model;
 
 import jakarta.persistence.*;
 import lombok.*; 

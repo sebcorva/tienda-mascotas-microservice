@@ -1,10 +1,16 @@
-package com.duoc.tienda_mascotas;
+package com.duoc.tienda_mascotas.service;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.duoc.tienda_mascotas.dto.OrdenDtoCreate;
+import com.duoc.tienda_mascotas.dto.OrdenDtoUpdate;
+import com.duoc.tienda_mascotas.model.Orden;
+import com.duoc.tienda_mascotas.model.Producto;
+import com.duoc.tienda_mascotas.repository.OrdenRepository;
 
 import jakarta.transaction.Transactional;
 
@@ -64,6 +70,7 @@ public class OrdenServiceImplementation implements OrdenService{
         if ("CONFIRMADA".equals(orden.getEstado())) {
             productoService.reStock(orden.getId_pro(), orden.getCantidad());
         }
+
         ordenRepository.deleteById(num_orden);
     }
 

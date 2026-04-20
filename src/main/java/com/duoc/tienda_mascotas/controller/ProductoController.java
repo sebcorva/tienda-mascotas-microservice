@@ -1,7 +1,10 @@
-package com.duoc.tienda_mascotas;
+package com.duoc.tienda_mascotas.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import com.duoc.tienda_mascotas.model.Producto;
+import com.duoc.tienda_mascotas.service.ProductoService;
 
 import java.util.List;
 

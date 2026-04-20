@@ -1,8 +1,12 @@
-package com.duoc.tienda_mascotas;
+package com.duoc.tienda_mascotas.service;
 
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
+
+import com.duoc.tienda_mascotas.dto.OrdenDtoCreate;
+import com.duoc.tienda_mascotas.dto.OrdenDtoUpdate;
+import com.duoc.tienda_mascotas.model.Orden;
 
 @Service
 public interface OrdenService {
