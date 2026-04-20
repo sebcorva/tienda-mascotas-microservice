@@ -32,7 +32,7 @@ public class OrdenServiceImplementation implements OrdenService{
         if (num_orden!=null){
             return ordenRepository.findById(num_orden);
         } else {
-            return null;
+            throw new IllegalArgumentException("Orden no encontrada");
         }
     }
 

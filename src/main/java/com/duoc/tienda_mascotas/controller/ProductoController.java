@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import com.duoc.tienda_mascotas.model.Producto;
 import com.duoc.tienda_mascotas.service.ProductoService;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 
 @RestController
@@ -33,7 +35,7 @@ public class ProductoController {
         "stock": 25
     } */
     @PostMapping()
-    public Producto createProducto(@RequestBody Producto producto) {
+    public Producto createProducto(@Valid @RequestBody Producto producto) {
         return productoService.createProducto(producto);
     }
     // http://localhost:8080/productos/5
@@ -43,7 +45,7 @@ public class ProductoController {
         "stock": 25
     } */
     @PutMapping("/{id_pro}")
-    public Producto updateProducto(@PathVariable Long id_pro, @RequestBody Producto producto) {
+    public Producto updateProducto(@Valid @PathVariable Long id_pro, @RequestBody Producto producto) {
         return productoService.updateProducto(id_pro, producto);
     }
     // http://localhost:8080/productos/5

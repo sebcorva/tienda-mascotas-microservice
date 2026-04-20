@@ -8,6 +8,8 @@ import com.duoc.tienda_mascotas.dto.OrdenDtoUpdate;
 import com.duoc.tienda_mascotas.model.Orden;
 import com.duoc.tienda_mascotas.service.OrdenService;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 
 @RestController
@@ -39,7 +41,7 @@ public class OrdenController {
         "cantidad": 10
     } */
     @PostMapping
-    public Orden createOrden(@RequestBody OrdenDtoCreate dto) {
+    public Orden createOrden(@Valid @RequestBody OrdenDtoCreate dto) {
         return ordenService.createOrden(dto);
     }
     // http://localhost:8080/orden/4
@@ -56,7 +58,7 @@ public class OrdenController {
         "estado": "RESERVADA"
     } */
     @PutMapping("/{num_orden}")
-    public Orden updateOrden(@PathVariable Long num_orden, @RequestBody OrdenDtoUpdate dto) {
+    public Orden updateOrden(@Valid @PathVariable Long num_orden, @RequestBody OrdenDtoUpdate dto) {
         return ordenService.updateOrden(num_orden, dto);
     }
     // http://localhost:8080/orden/completar/23
